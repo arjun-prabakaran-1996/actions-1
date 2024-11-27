@@ -13,6 +13,6 @@ jobs:
               run: ls
 
             - name: print file
-              run: pwd
+              run: cat README.md
 
         
