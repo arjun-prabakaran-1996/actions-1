@@ -12,10 +12,16 @@ jobs:
             - name: welcome
               run: echo "welcome"
 
-            - name: show files
-              run: ls
+            - name: list and read file
+              run: |
+                ls
+                ls -ltrah
+                cat README.md
 
-            - name: print file
-              run: cat README.md
+            - name: ascii
+              run: cowsay -f dragon "am dragon, run away" >> dragon.txt
+
+            # - name: print file
+            #   run: cat README.md
 
         
