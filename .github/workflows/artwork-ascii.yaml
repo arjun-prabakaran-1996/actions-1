@@ -1,0 +1,28 @@
+name: ascii artwork
+
+on: push
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest 
+        steps:
+            - name: checkout repo
+              uses: actions/checkout@v4
+              
+            - name: install cowsay
+              run: sudo apt-get install cowsay -y 
+
+            - name: ascii file
+              run: cowsay -f dragon "am dragon, run away" >> dragon.txt
+
+            - name: test file
+              run: grep -i "dragon" dragon.txt
+
+            - name: read file
+              run: cat dragon.txt
+
+            - name: list file
+              run: ls -ltrah
+
+            # - name: print file
+            #   run: cat README.md
