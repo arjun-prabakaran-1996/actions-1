@@ -13,7 +13,7 @@ jobs:
               run: sudo apt-get install cowsay -y 
 
             - name: ascii file
-              run: cowsay -f dragon "am dragon, run away" >> dragon.txt
+              run: cowsay -f dragon "am a dragon, run away" >> dragon.txt
 
             - name: test file
               run: grep -i "dragon" dragon.txt
