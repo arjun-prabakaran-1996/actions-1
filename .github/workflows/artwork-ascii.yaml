@@ -13,7 +13,9 @@ jobs:
               run: ls -ltrah
             
             - name: exc sh file
-              run: sh ./ascii.sh
+              run: |
+                chmod +x ./ascii.sh
+                sh ./ascii.sh
 
             # - name: print file
             #   run: cat README.md
