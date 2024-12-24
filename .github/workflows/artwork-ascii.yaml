@@ -5,18 +5,30 @@ on: push
 jobs:
     first_job:
         runs-on: ubuntu-latest 
-        steps:
-            - name: checkout repo
-              uses: actions/checkout@v4
-              
-            - name: list file
-              run: ls -ltrah
+        steps:              
+            - name: install cowsay
+              run: sudo apt-get install cowsay -y
             
-            - name: exc sh file
-              run: |
-                chmod +x ./ascii.sh
-                sh ./ascii.sh
-                ls -ltrah
+            - name: dragon file
+              run: cowsay -f dragon "am a dragon, run away" >> dragon.txt
 
-            # - name: print file
-            #   run: cat README.md
+            - name: sleep
+              run: sleep 30
+
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: sleep
+            run: sleep 20
+
+          - name: check for file
+            run: grep -i "dragon" dragon.txt
+    
+    deploy_job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: read file
+          run: cat dragon.txt
+
+        - name: deploy
+          run: echo deploying........
