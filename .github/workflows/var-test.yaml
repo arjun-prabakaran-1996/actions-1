@@ -4,6 +4,7 @@ on: push
 
 env:
     glb: glbval
+    PASSWORD: jkhdgs!,123mlhj
 
 jobs:
     first_job:
@@ -27,6 +28,9 @@ jobs:
 
             - name: check glb var
               run: echo ${{ env.glb }}/$glb
+
+            - name:
+              run: echo ${{ env.PASSWORD }}
 
 
     second_job:
