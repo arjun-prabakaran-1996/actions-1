@@ -32,6 +32,9 @@ jobs:
             - name: pass
               run: echo ${{ env.PASSWORD }}
 
+            - name: check repo creds
+              run: echo ${{ vars.REPVAR }}, ${{ secrets.REPSEC }}
+
 
     second_job:
         needs: first_job
