@@ -29,7 +29,7 @@ jobs:
             - name: check glb var
               run: echo ${{ env.glb }}/$glb
 
-            - name:
+            - name: pass
               run: echo ${{ env.PASSWORD }}
 
 
