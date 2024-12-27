@@ -23,13 +23,14 @@ jobs:
               run: echo ${{ env.stpvar2 }}
 
             - name: check job env
-              run: ${{ env.jobvar }}/$jobvar
+              run: echo ${{ env.jobvar }}/$jobvar
 
             - name: check glb var
               run: echo ${{ env.glb }}/$glb
 
 
     second_job:
+        needs: first_job
         env:
             sjb: sjbval
 
