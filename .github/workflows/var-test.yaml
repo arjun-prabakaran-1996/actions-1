@@ -1,0 +1,42 @@
+name: var test
+
+on: push
+
+env:
+    glb: glbval
+
+jobs:
+    first_job:
+        env:
+            jobvar: jobvarval
+        
+        runs-on: ubuntu-latest
+        steps:
+            - name: check env
+              env:
+                stpvar: stpvarval
+              run: echo $stpvar
+
+            - name: check env2
+              env:
+                stpvar2: stpvar2val
+              run: echo ${{ env.stpvar2 }}
+
+            - name: check job env
+              run: ${{ env.jobvar }}/$jobvar
+
+            - name: check glb var
+              run: echo ${{ env.glb }}/$glb
+
+
+    second_job:
+        env:
+            sjb: sjbval
+
+        runs-on: ubuntu-latest
+        steps:
+            - name: check env
+              env:
+                stvar: stvarval
+              run: echo ${{ env.glb }}, ${{ env.sjb }}, ${{ env.stvar }}
+
