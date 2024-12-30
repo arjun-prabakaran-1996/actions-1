@@ -1,8 +1,7 @@
 name: var test
 
 on: 
-  schedule:
-    - cron: "* * * * *"
+   workflow_dispatch: 
 
 env:
     glb: glbval
