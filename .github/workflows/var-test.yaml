@@ -1,6 +1,8 @@
 name: var test
 
-on: push
+on: 
+  schedule:
+    - cron: "* * * * *"
 
 env:
     glb: glbval
