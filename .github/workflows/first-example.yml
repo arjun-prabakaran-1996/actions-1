@@ -9,7 +9,7 @@ jobs:
             - name: checkout repo
               uses: actions/checkout@v4
 
-      # Step 4.5: Run Gitleaks to scan for secrets
+      # #Step 4.5: Run Gitleaks to scan for secrets
             - name: Run Gitleaks scan
               uses: gitleaks/gitleaks-action@v2
               env:
